@@ -30,6 +30,10 @@
         "@typescript-eslint/no-misused-promises": ["warn"],
         "@typescript-eslint/object-curly-spacing": ["warn"],
         "@typescript-eslint/no-unused-vars": ["warn"],
+        "@typescript-eslint/no-floating-promises": ["warn", {
+            "ignoreVoid": true
+        }],
+        "spaced-comment": "off",
         "@typescript-eslint/consistent-type-assertions": ["warn", {
             "assertionStyle": "as",
             "objectLiteralTypeAssertions": "allow-as-parameter"
