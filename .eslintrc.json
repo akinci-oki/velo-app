@@ -29,6 +29,7 @@
         "@typescript-eslint/comma-dangle": "off",
         "@typescript-eslint/no-misused-promises": ["warn"],
         "@typescript-eslint/object-curly-spacing": ["warn"],
+        "@typescript-eslint/no-unused-vars": ["warn"],
         "@typescript-eslint/consistent-type-assertions": ["warn", {
             "assertionStyle": "as",
             "objectLiteralTypeAssertions": "allow-as-parameter"

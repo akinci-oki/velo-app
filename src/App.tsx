@@ -1,11 +1,10 @@
 import "./App.scss";
+import Map from "./components/Map/Map";
 
 function App (): JSX.Element {
     return (
         <div className="App">
-            <p>
-                Hello world!
-            </p>
+            <Map></Map>
         </div>
     );
 }
