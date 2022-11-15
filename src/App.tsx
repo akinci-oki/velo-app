@@ -1,13 +1,13 @@
-import './App.scss';
+import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-        <p>
-          Hello world!
-        </p>
-    </div>
-  );
+function App (): JSX.Element {
+    return (
+        <div className="App">
+            <p>
+                Hello world!
+            </p>
+        </div>
+    );
 }
 
 export default App;
