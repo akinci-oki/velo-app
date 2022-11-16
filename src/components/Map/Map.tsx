@@ -7,12 +7,12 @@ function Map (): JSX.Element {
     async function getLocations (): Promise<void> {
         try {
             const response = await axios.get("http://api.citybik.es/v2/networks/velo-antwerpen");
-            console.log(response);
+            const markerLs = response.data.network.stations.map((station: any) => [station.latitude, station.longitude]);
+            setMarkerPositions(markerLs);
         } catch (error) {
             console.error(error);
         }
     }
-
     useEffect((): void => {
         getLocations();
     }, []);
@@ -37,7 +37,4 @@ function Map (): JSX.Element {
         </MapContainer>
     );
 }
-
-/*http://api.citybik.es/v2/networks/velo-antwerpen*/
-
 export default Map;
