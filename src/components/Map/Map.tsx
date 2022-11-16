@@ -2,13 +2,32 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+interface Station {
+status: string
+address: string
+name: string
+free_bikes: number
+empty_slots: number
+location: [number, number]
+}
+
 function Map (): JSX.Element {
-    const [markerPositions, setMarkerPositions] = useState([[51.22373, 4.40302], [51.22219, 4.40459]] as Array<[number, number]>);
+    const [stations, setStations] = useState([]);
     async function getLocations (): Promise<void> {
         try {
             const response = await axios.get("http://api.citybik.es/v2/networks/velo-antwerpen");
-            const markerLs = response.data.network.stations.map((station: any) => [station.latitude, station.longitude]);
-            setMarkerPositions(markerLs);
+            const stations = response.data.network.stations.map((station: any) => {
+                return {
+                    status: station.extra.status,
+                    address: station.extra.address,
+                    name: station.name,
+                    free_bikes: station.free_bikes,
+                    empty_slots: station.empty_slots,
+                    location: [station.latitude, station.longitude],
+                };
+            });
+            setStations(stations);
+            console.log(response);
         } catch (error) {
             console.error(error);
         }
@@ -27,8 +46,8 @@ function Map (): JSX.Element {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {markerPositions.map((marker, index) => (
-                <Marker key={index} position={marker}>
+            {stations.length > 0 && stations.map((station: Station, index: number) => (
+                <Marker key={index} position={station.location}>
                     <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
@@ -37,4 +56,11 @@ function Map (): JSX.Element {
         </MapContainer>
     );
 }
+/*OPN, CLS*/
+/*styling the markers*/
+/*if available-orange*/
+/*if empty-blue*/
+/*if full-red*/
+/*if status-CLS-grey*/
+/*popups: station number, station name, available bikes, empty slots*/
 export default Map;
