@@ -1,14 +1,15 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { orangeMarker } from "./markers";
 
 interface Station {
-status: string
-address: string
-name: string
-free_bikes: number
-empty_slots: number
-location: [number, number]
+    status: string
+    address: string
+    name: string
+    free_bikes: number
+    empty_slots: number
+    location: [number, number]
 }
 
 function Map (): JSX.Element {
@@ -28,6 +29,7 @@ function Map (): JSX.Element {
             });
             setStations(stations);
             console.log(response);
+            console.log(stations);
         } catch (error) {
             console.error(error);
         }
@@ -35,6 +37,10 @@ function Map (): JSX.Element {
     useEffect((): void => {
         getLocations();
     }, []);
+
+    const getIcon = (station: Station): L.DivIcon => {
+        return orangeMarker;
+    };
 
     return (
         <MapContainer
@@ -46,21 +52,25 @@ function Map (): JSX.Element {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {stations.length > 0 && stations.map((station: Station, index: number) => (
-                <Marker key={index} position={station.location}>
-                    <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                    </Popup>
-                </Marker>
-            ))};
+            {stations.length > 0 &&
+                stations.map((station: Station, index: number) => (
+                    <Marker
+                        key={index} position={station.location} icon={getIcon(station)} >
+                        <Popup>
+                            {station.name}  <br />
+                            {station.free_bikes} {station.empty_slots}
+                        </Popup>
+                    </Marker>
+                ))}
+            ;
         </MapContainer>
     );
-}
+};
 /*OPN, CLS*/
 /*styling the markers*/
 /*if available-orange*/
 /*if empty-blue*/
 /*if full-red*/
 /*if status-CLS-grey*/
-/*popups: station number, station name, available bikes, empty slots*/
+/*popups: station number✔ , station name✔ , available bikes✔ , empty slots✔ */
 export default Map;

@@ -1,3 +1,20 @@
-.leaflet-container { 
-    height: 50rem; 
+.leaflet-container {
+    margin: 15rem;
+    height: 50rem;
+}
+
+.orange-marker {
+    background-image: url("../../../public/icons/station-orange.png");
+}
+
+.blue-marker {
+    background-image: url("../../../public/icons/station-blue.png");
+}
+
+.red-marker {
+    background-image: url("../../../public/icons/station-red.png");
+}
+
+.grey-marker {
+    background-image: url("../../../public/icons/station-grey.png");
 }
