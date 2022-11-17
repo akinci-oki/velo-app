@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { orangeMarker } from "./markers";
+import { blueMarker, orangeMarker, redMarker, greyMarker } from "./markers";
 
 interface Station {
     status: string
@@ -39,6 +39,16 @@ function Map (): JSX.Element {
     }, []);
 
     const getIcon = (station: Station): L.DivIcon => {
+        if (station.status === "CLS") {
+            return greyMarker;
+        }
+        if (station.empty_slots < 1) {
+            return redMarker;
+        }
+        if (station.free_bikes < 1) {
+            return blueMarker;
+        }
+
         return orangeMarker;
     };
 
@@ -66,11 +76,4 @@ function Map (): JSX.Element {
         </MapContainer>
     );
 };
-/*OPN, CLS*/
-/*styling the markers*/
-/*if available-orange*/
-/*if empty-blue*/
-/*if full-red*/
-/*if status-CLS-grey*/
-/*popups: station number✔ , station name✔ , available bikes✔ , empty slots✔ */
 export default Map;
