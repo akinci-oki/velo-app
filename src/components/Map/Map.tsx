@@ -67,8 +67,12 @@ function Map (): JSX.Element {
                     <Marker
                         key={index} position={station.location} icon={getIcon(station)} >
                         <Popup>
-                            {station.name}  <br />
-                            {station.free_bikes} {station.empty_slots}
+                            <strong> <img src="icons/star.png"/> {station.name} </strong>
+                            <div>
+                                <strong> <img src="icons/bike.png"/> {station.free_bikes} </strong>
+                                <br />
+                                <strong> <img src="icons/slots.png"/> {station.empty_slots} </strong>
+                            </div>
                         </Popup>
                     </Marker>
                 ))}

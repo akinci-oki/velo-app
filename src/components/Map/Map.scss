@@ -1,6 +1,11 @@
 .leaflet-container {
-    margin: 15rem;
-    height: 50rem;
+    margin: 10rem;
+    height: 30rem;
+
+    .leaflet-popup-content-wrapper {
+        width: 12rem;
+        height: 7rem;
+    }
 }
 
 .orange-marker {
