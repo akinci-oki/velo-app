@@ -1,6 +1,10 @@
 .leaflet-container {
     height: 30rem;
     padding: 0.5rem;
+    
+    @media only screen and (min-width: $break-point-large) {
+        margin: 0 7rem 7rem;
+    }
 
     .leaflet-popup-content-wrapper {
         width: 12rem;

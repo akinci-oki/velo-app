@@ -16,17 +16,19 @@ function Homepage (): JSX.Element {
                     </p>
                 </div>
             </div>
-            <div className="content">
-                <h1> Find a station </h1>
-                <p>
-                    The map shows which stations are open and shows the number of
-                    available bikes in each station in real time.
-                </p>
-                <div className="info-markers">
-                    <div className="station"> <img src="icons/station-orange.png"/> <p>Available bikes</p> </div>
-                    <div className="station"> <img src="icons/station-blue.png"/> <p>Empty Station</p> </div>
-                    <div className="station"> <img src="icons/station-red.png"/> <p>Full Station</p> </div>
-                    <div className="station"> <img src="icons/station-grey.png"/> <p>Out of service</p> </div>
+            <div className="content-container">
+                <div className="content">
+                    <h1> Find a station </h1>
+                    <p>
+                        The map shows which stations are open and shows the number of
+                        available bikes in each station in real time.
+                    </p>
+                    <div className="info-markers">
+                        <div className="station"> <img src="icons/station-orange.png"/> <p>Available bikes</p> </div>
+                        <div className="station"> <img src="icons/station-blue.png"/> <p>Empty Station</p> </div>
+                        <div className="station"> <img src="icons/station-red.png"/> <p>Full Station</p> </div>
+                        <div className="station"> <img src="icons/station-grey.png"/> <p>Out of service</p> </div>
+                    </div>
                 </div>
                 <Map/>
             </div>
