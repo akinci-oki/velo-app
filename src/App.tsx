@@ -1,9 +1,9 @@
-import Home from "components/Homepage/Home";
+import Router from "Router";
 
 function App (): JSX.Element {
     return (
         <div className="App">
-            <Home></Home>
+            <Router></Router>
         </div>
     );
 }

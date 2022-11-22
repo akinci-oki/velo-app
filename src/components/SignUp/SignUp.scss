@@ -1,0 +1,65 @@
+.sign-up {
+    text-align: center;
+    color: $color-primary;
+
+    .header {
+        width: 40%;
+        align-items: center;
+        height: 4rem;
+        background-image: url("../../../public/icons/velologo.svg");
+    }
+
+    .signup-image {
+        height: 15rem;
+        width: 100%;
+        background-image: url("../../../public/icons/veloautumn.jpg");
+        background-size: cover;
+        background-position: top;
+    }
+
+    .text-space {
+        width: 100%;
+        height: 4rem;
+        padding: 0.5rem;
+        color: white;
+        background-color: $color-primary;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .signup-form {
+        margin-top: 3rem;
+        color: black;
+    }
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .signup-button {
+        color: white;
+        width: 7rem;
+        border-radius: 5%;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 0;
+    }
+
+    label {
+        margin-bottom: 1rem;
+    }
+
+    input {
+        padding: 0.5rem;
+        width: 15rem;
+        height: 2rem;
+        border-radius: 5%;
+        border-color: #ddd7d7
+    }
+}

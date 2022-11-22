@@ -1,12 +1,20 @@
 import Map from "components/Map/Map";
+import { Link } from "react-router-dom";
 
 function Homepage (): JSX.Element {
     return (
         <div className="home-page">
             <div className="buttons">
-                <button>
-                    <img className="icon" src="icons/user-icon-white.png" />
-                </button>
+                <Link to="/sign-up">
+                    <button>
+                        <span className="acc-icon">
+                            <img className="icon" src="icons/user-icon-white.png" />
+                        </span>
+                        <span className="label">
+                            Sign Up
+                        </span>
+                    </button>
+                </Link>
             </div>
             <div>
                 <div className="bike-image" />

@@ -6,6 +6,28 @@
 
         button {
             border-radius: 50%;
+            .label {
+                display: none;
+            }
+            .acc-icon {
+                display: block;
+            }
+
+            &:hover {
+                -webkit-transition: width 0.3s ease-in-out;
+                -moz-transition: width 0.3s ease-in-out;
+                -o-transition: width 0.3s ease-in-out;
+                transition: width 0.3s ease-in-out;
+                border-radius: 5rem;
+                width: 7rem;
+                .label {
+                    color: white;
+                    display: block;
+                }
+                .acc-icon {
+                    display: none;
+                }
+            }
 
             .icon {
                 height: 1.5rem;
@@ -36,6 +58,7 @@
         p {
             text-align: center;
             margin: 0;
+
             @media only screen and (min-width: $break-point-large) {
                 font-size: 20px;
             }
@@ -51,8 +74,8 @@
                 padding: 0 1rem;
             }
         }
-        
-        .content{
+
+        .content {
             @media only screen and (min-width: $break-point-large) {
                 margin: 3rem 0;
             }
