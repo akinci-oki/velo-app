@@ -4,27 +4,35 @@ function SignUp (): JSX.Element {
             <div className="header">
                 <img src="icons/velologo.svg"></img>
             </div>
-            <div>
-                <div className="signup-image" />
-                <div className="text-space">
-                    <p>
-                        Signing up will allow you to save your favorite stations.
-                    </p>
+            <div className="grid">
+                <div className="column">
+                    <div className="signup-image left" />
+                </div>
+                <div className="column">
+                    <div className="text-space">
+                        <p>
+                            Signing up will allow you to save your favorite
+                            stations.
+                        </p>
+                    </div>
+                    <form className="signup-form">
+                        <div className="input-container">
+                            <label> username </label>
+                            <input placeholder="(username)" />
+                        </div>
+                        <div className="input-container">
+                            <label> password </label>
+                            <input placeholder="password" />
+                        </div>
+                        <div>
+                            <button className="signup-button">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+                <div className="column">
+                    <div className="signup-image right" />
                 </div>
             </div>
-            <form className="signup-form">
-                <div className="input-container">
-                    <input placeholder="(username)" />
-                </div>
-                <div className="input-container">
-                    <input placeholder="password" />
-                </div>
-                <div>
-                    <button className="signup-button">
-                        Sign Up
-                    </button>
-                </div>
-            </form>
         </div>
     );
 }
