@@ -1,7 +1,9 @@
 function SignUp (): JSX.Element {
     return (
         <div className="sign-up">
-            <div className="header"/>
+            <div className="header">
+                <img src="icons/velologo.svg"></img>
+            </div>
             <div>
                 <div className="signup-image" />
                 <div className="text-space">

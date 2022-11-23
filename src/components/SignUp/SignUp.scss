@@ -1,20 +1,17 @@
 .sign-up {
-    text-align: center;
     color: $color-primary;
 
-    .header {
-        width: 40%;
-        align-items: center;
-        height: 4rem;
-        background-image: url("../../../public/icons/velologo.svg");
+    .header img{
+        width: 8rem;
+        display: block;
     }
 
     .signup-image {
-        height: 15rem;
+        height: 17rem;
         width: 100%;
         background-image: url("../../../public/icons/veloautumn.jpg");
         background-size: cover;
-        background-position: top;
+        background-position: bottom;
     }
 
     .text-space {
@@ -24,11 +21,13 @@
         color: white;
         background-color: $color-primary;
         align-items: center;
+        text-align: center;
         justify-content: center;
         display: flex;
     }
 
     .signup-form {
+        text-align: center;
         margin-top: 3rem;
         color: black;
     }
