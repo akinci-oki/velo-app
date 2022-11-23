@@ -18,11 +18,11 @@ function SignUp (): JSX.Element {
                     <form className="signup-form">
                         <div className="input-container">
                             <label> username </label>
-                            <input placeholder="(username)" />
+                            <input placeholder="Okidoki" />
                         </div>
                         <div className="input-container">
                             <label> password </label>
-                            <input placeholder="password" />
+                            <input type="password" placeholder="******" />
                         </div>
                         <div>
                             <button className="signup-button">Sign Up</button>
