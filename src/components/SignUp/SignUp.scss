@@ -1,67 +1,6 @@
 .sign-up {
     color: $color-primary;
 
-    .grid {
-        @media only screen and (min-width: $break-point-medium) {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
-        @media only screen and (min-width: $break-point-large) {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        .column:last-of-type {
-            display: none;
-
-            @media only screen and (min-width: $break-point-large) {
-                display: block;
-            }
-        }
-    }
-
-    .header img {
-        width: 8rem;
-        display: block;
-    }
-
-    .signup-image {
-        height: 21rem;
-        width: 100%;
-        background-size: cover;
-        background-position: bottom;
-
-        &.left {
-            background-image: url("../../../public/icons/veloautumn.jpg");
-        }
-
-        &.right {
-            transform: scaleX(-1);
-            background-image: url("../../../public/icons/velowinter.jpg");
-        }
-    }
-
-    .text-space {
-        width: 100%;
-        height: 4rem;
-        padding: 0.5rem;
-        color: white;
-        background-color: $color-primary;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        display: flex;
-
-        @media only screen and (min-width: $break-point-large) {
-            color: black;
-            background-color: transparent;
-
-            p {
-                margin-top: 4rem;
-            }
-        }
-    }
-
     .signup-form {
         display: flex;
         align-items: center;
@@ -80,11 +19,6 @@
         width: 7rem;
         border-radius: 5%;
         margin-top: 1rem;
-    }
-
-    h2 {
-        text-align: center;
-        margin: 0;
     }
 
     input {
