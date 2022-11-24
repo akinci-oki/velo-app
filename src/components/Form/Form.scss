@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    color: black;
+    
+    .input-container {
+        width: 12rem;
+        margin-bottom: 1rem;
+    }
+    
+    .button {
+        color: white;
+        width: 7rem;
+        border-radius: 5%;
+        margin-top: 1rem;
+    }
+    
+    input {
+        margin-top: 0.4rem;
+        padding: 0.5rem;
+        width: 12rem;
+        height: 2rem;
+        border-color: #ddd7d7
+    }
+}

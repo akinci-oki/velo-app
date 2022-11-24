@@ -39,4 +39,9 @@ html {
         height: 3rem;
         background-color: $color-primary;
     }
+    
+    .link {
+        display: flex;
+        justify-content: center;
+    }
 } 
