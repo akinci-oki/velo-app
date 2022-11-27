@@ -16,6 +16,15 @@
         border-radius: 5%;
         margin-top: 1rem;
     }
+
+    .error {
+        font-weight: $fontweight-semibold;
+        color: $color-error;
+    }
+
+    img {
+        height: 1.5rem;
+    }
     
     input {
         margin-top: 0.4rem;
