@@ -16,6 +16,9 @@ function Homepage (): JSX.Element {
                     </button>
                 </Link>
             </div>
+            <div className="welcome-message">
+                <p> Welcome to Velo MApp! </p>
+            </div>
             <div>
                 <div className="bike-image" />
                 <div className="text-space">

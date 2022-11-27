@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ProfileWrapper from "components/ProfileWrapper/ProfileWrapper";
-import Form from "components/Form/Form";
+// import Form from "components/Form/Form";
 
 function Login (): JSX.Element {
     return (

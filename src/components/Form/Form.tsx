@@ -14,7 +14,7 @@ function Form({
         password: "",
     });
     const onSubmit = (e: any): void => {
-        e.preventDefault(); onClick("username", "password");
+        e.preventDefault();
         setError({
             username: "",
             password: "",
@@ -31,6 +31,10 @@ function Form({
                 password: "please fill in password.",
             }));
         }
+        if (username.length < 1 || password.length < 1) {
+            return;
+        }
+        onClick(username, password);
     };
     return (
         <form className="form">
