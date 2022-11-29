@@ -6,6 +6,7 @@ function Homepage (): JSX.Element {
     const { user } = useUser();
     return (
         <div className="home-page">
+            {/* TODO: Move to seperate component */}
             <div className="button-container">
                 <Link to={user.username.length > 0 ? "/log-out" : "/sign-up"}>
                     <button>

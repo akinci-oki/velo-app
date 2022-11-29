@@ -13,11 +13,11 @@ interface Station {
 }
 
 function Map (): JSX.Element {
-    const [stations, setStations] = useState([]);
+    const [stations, setStations] = useState<Station[]>([]);
     async function getLocations (): Promise<void> {
         try {
             const response = await axios.get("http://api.citybik.es/v2/networks/velo-antwerpen");
-            const stations = response.data.network.stations.map((station: any) => {
+            const stations: Station[] = response.data.network.stations.map((station: any) => {
                 return {
                     status: station.extra.status,
                     address: station.extra.address,
@@ -27,14 +27,15 @@ function Map (): JSX.Element {
                     location: [station.latitude, station.longitude],
                 };
             });
+            // setting the stations on local state
             setStations(stations);
         } catch (error) {
             /* eslint-disable-next-line no-console */
             console.error(error);
         }
     }
-    useEffect((): void => {
-        getLocations();
+    useEffect(() => {
+        void getLocations();
     }, []);
 
     const getIcon = (station: Station): L.DivIcon => {
@@ -52,17 +53,21 @@ function Map (): JSX.Element {
     };
 
     return (
+        // markup
         <MapContainer
             center={[51.2213, 4.4051]}
             zoom={12.4}
             scrollWheelZoom={true}
         >
+
             <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+
             {stations.length > 0 &&
-                stations.map((station: Station, index: number) => (
+                stations.map((station, index: number) => (
+
                     <Marker
                         key={index} position={station.location} icon={getIcon(station)} >
                         <Popup>
@@ -76,6 +81,7 @@ function Map (): JSX.Element {
                     </Marker>
                 ))}
             ;
+
         </MapContainer>
     );
 };

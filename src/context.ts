@@ -27,4 +27,5 @@ export const userContext = createContext<UserContextType>({
     setUsers: (users) => console.warn("No userContext provider."),
 
 });
+// sharing and setting user infos across components - globaly
 export const useUser = (): UserContextType => useContext(userContext);

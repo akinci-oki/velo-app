@@ -5,6 +5,7 @@ import Form from "components/Form/Form";
 import { useUser } from "context";
 
 function SignUp (): JSX.Element {
+    // useUser is custom hook
     const { users, setUsers, setUser } = useUser();
     function onSignUp(username: string, password: string): void {
         const newUser = {
