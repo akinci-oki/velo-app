@@ -1,3 +1,7 @@
+# Velo mApp 
+
+This project was created for a interview. It uses the Velo api to creat a map of all the velo stations. It is still work in progress.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
