@@ -1,4 +1,4 @@
-function Error (): JSX.Element {
+function ErrorIcon (): JSX.Element {
     return (
         <div className="error">
             <span className="error-icon">
@@ -8,4 +8,4 @@ function Error (): JSX.Element {
     );
 }
 
-export default Error;
+export default ErrorIcon;

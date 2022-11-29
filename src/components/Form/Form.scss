@@ -10,16 +10,16 @@
         margin-bottom: 1rem;
     }
     
-    .button {
+    .error {
+        font-weight: $fontweight-semibold;
+        color: $color-error;
+    }
+
+    button {
         color: white;
         width: 7rem;
         border-radius: 5%;
         margin-top: 1rem;
-    }
-
-    .error {
-        font-weight: $fontweight-semibold;
-        color: $color-error;
     }
 
     img {

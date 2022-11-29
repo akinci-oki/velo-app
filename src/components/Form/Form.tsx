@@ -1,7 +1,7 @@
 import { useUser } from "context";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Error from "components/Error/Error";
+import ErrorIcon from "components/ErrorIcon/ErrorIcon";
 
 function Form({
     buttonText,
@@ -61,8 +61,8 @@ function Form({
                     setUsername(e.target.value);
                 }}
                 />
-                {error.username.length > 0 && <p className="error"> <Error /> {error.username}</p>}
-                {error.isUnique.length > 0 && <p className="error"> <Error /> {error.isUnique}</p>}
+                {error.username.length > 0 && <p className="error"> <ErrorIcon /> {error.username}</p>}
+                {error.isUnique.length > 0 && <p className="error"> <ErrorIcon /> {error.isUnique}</p>}
             </div>
             <div className="input-container">
                 <label> password </label>
@@ -72,10 +72,10 @@ function Form({
                         setPassword(e.target.value);
                     }}
                 />
-                {error.password.length > 0 && <p className="error"> <Error /> {error.password}</p>}
+                {error.password.length > 0 && <p className="error"> <ErrorIcon /> {error.password}</p>}
             </div>
             <div>
-                <button onClick={onSubmit} type="submit" className="button">
+                <button onClick={onSubmit} type="submit">
                     {buttonText}
                 </button>
             </div>

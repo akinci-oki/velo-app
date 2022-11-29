@@ -21,8 +21,8 @@ function Logout (): JSX.Element {
                     <div className="text-space">
                         <p>You&apos;re now logged out!</p>
                     </div>
-                    <div className="logout-button">
-                        <Link to="/">  <button className="button"> Home </button> </Link>
+                    <div className="button-container">
+                        <Link to="/">  <button> Home </button> </Link>
                     </div>
                 </>
             </ProfileWrapper>

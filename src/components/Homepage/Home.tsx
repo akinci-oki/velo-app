@@ -6,7 +6,7 @@ function Homepage (): JSX.Element {
     const { users, setUsers, user, setUser } = useUser();
     return (
         <div className="home-page">
-            <div className="buttons">
+            <div className="button-container">
                 <Link to={user.username.length > 0 ? "/log-out" : "/sign-up"}>
                     <button>
                         <span className="acc-icon">
