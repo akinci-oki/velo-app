@@ -28,9 +28,8 @@ function Map (): JSX.Element {
                 };
             });
             setStations(stations);
-            console.log(response);
-            console.log(stations);
         } catch (error) {
+            /* eslint-disable-next-line no-console */
             console.error(error);
         }
     }

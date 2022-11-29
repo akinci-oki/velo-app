@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 import ProfileWrapper from "components/ProfileWrapper/ProfileWrapper";
 import Form from "components/Form/Form";
 import { useUser } from "context";
 
 function SignUp (): JSX.Element {
-    const { users, setUsers, user, setUser } = useUser();
+    const { users, setUsers, setUser } = useUser();
     function onSignUp(username: string, password: string): void {
-        console.log(username, password);
         const newUser = {
             id: uuid(),
             username,

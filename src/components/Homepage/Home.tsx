@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useUser } from "context";
 
 function Homepage (): JSX.Element {
-    const { users, setUsers, user, setUser } = useUser();
+    const { user } = useUser();
     return (
         <div className="home-page">
             <div className="button-container">

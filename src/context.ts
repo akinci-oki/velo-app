@@ -23,6 +23,7 @@ export const userContext = createContext<UserContextType>({
             password: "admin"
         }
     ],
+    /* eslint-disable-next-line no-console */
     setUsers: (users) => console.warn("No userContext provider."),
 
 });

@@ -10,7 +10,7 @@ function Form({
     buttonText: string
     onClick: (username: string, password: string) => void
 }): JSX.Element {
-    const { users, setUsers, user, setUser } = useUser();
+    const { users } = useUser();
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -19,14 +19,14 @@ function Form({
         password: "",
         isUnique: "",
     });
-    const onSubmit = (e: any): void => {
+    const onSubmit = (e: React.MouseEvent): void => {
         e.preventDefault();
         setError({
             username: "",
             password: "",
             isUnique: "",
         });
-        const isUnique = users.find(user => user.username === username) === undefined
+        const isUnique = users.find(user => user.username === username) === undefined;
         if (!isUnique) {
             setError((error) => ({
                 ...error,

@@ -14,6 +14,6 @@ const Router = (): JSX.Element => {
             <Route path= "/log-out" element = {<Logout />}> </Route>
             <Route path= "/" element = {<Home />}> </Route>
         </Routes>
-    )
+    );
 };
 export default Router;

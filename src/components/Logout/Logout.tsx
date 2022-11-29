@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ProfileWrapper from "components/ProfileWrapper/ProfileWrapper";
 
 function Logout (): JSX.Element {
-    const { users, setUsers, user, setUser } = useUser();
+    const { setUser } = useUser();
 
     useEffect(() => {
         setUser({

@@ -9,7 +9,7 @@ function App (): JSX.Element {
             username: "admin",
             password: "admin"
         }
-    ])
+    ]);
     const [user, setUser] = useState({
         id: "",
         username: "",
