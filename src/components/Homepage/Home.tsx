@@ -1,24 +1,26 @@
 import Map from "components/Map/Map";
 import { Link } from "react-router-dom";
+import { useUser } from "context";
 
 function Homepage (): JSX.Element {
+    const { users, setUsers, user, setUser } = useUser();
     return (
         <div className="home-page">
             <div className="buttons">
-                <Link to="/sign-up">
+                <Link to={user.username.length > 0 ? "/log-out" : "/sign-up"}>
                     <button>
                         <span className="acc-icon">
                             <img className="icon" src="icons/user-icon-white.png" />
                         </span>
                         <span className="label">
-                            Sign Up
+                            {user.username.length > 0 ? "Log out" : "Sign Up"}
                         </span>
                     </button>
                 </Link>
             </div>
-            <div className="welcome-message">
+            {user?.username?.length > 0 && <div className="welcome-message">
                 <p> Welcome to Velo MApp! </p>
-            </div>
+            </div>}
             <div>
                 <div className="bike-image" />
                 <div className="text-space">

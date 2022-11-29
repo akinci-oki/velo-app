@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function ProfileWrapper ({ children }: { children: JSX.Element }): JSX.Element {
     return (
         <div className="wrapper">
             <div className="header">
-                <img src="icons/velologo.svg"></img>
+                <Link to="/"> <img src="icons/velologo.svg"></img> </Link>
             </div>
             <div className="grid">
                 <div className="column">

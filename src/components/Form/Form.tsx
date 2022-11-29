@@ -1,4 +1,7 @@
+import { useUser } from "context";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Error from "components/Error/Error";
 
 function Form({
     buttonText,
@@ -7,18 +10,30 @@ function Form({
     buttonText: string
     onClick: (username: string, password: string) => void
 }): JSX.Element {
+    const { users, setUsers, user, setUser } = useUser();
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState({
         username: "",
         password: "",
+        isUnique: "",
     });
     const onSubmit = (e: any): void => {
         e.preventDefault();
         setError({
             username: "",
             password: "",
+            isUnique: "",
         });
+        const isUnique = users.find(user => user.username === username) === undefined
+        if (!isUnique) {
+            setError((error) => ({
+                ...error,
+                isUnique: "username is already in use",
+            }));
+            return;
+        }
         if (username.length < 1) {
             setError((error) => ({
                 ...error,
@@ -35,6 +50,7 @@ function Form({
             return;
         }
         onClick(username, password);
+        navigate("/");
     };
     return (
         <form className="form">
@@ -45,7 +61,8 @@ function Form({
                     setUsername(e.target.value);
                 }}
                 />
-                {<p className="error"> {error.username}</p>}
+                {error.username.length > 0 && <p className="error"> <Error /> {error.username}</p>}
+                {error.isUnique.length > 0 && <p className="error"> <Error /> {error.isUnique}</p>}
             </div>
             <div className="input-container">
                 <label> password </label>
@@ -55,7 +72,7 @@ function Form({
                         setPassword(e.target.value);
                     }}
                 />
-                {<p className="error">{error.password}</p>}
+                {error.password.length > 0 && <p className="error"> <Error /> {error.password}</p>}
             </div>
             <div>
                 <button onClick={onSubmit} type="submit" className="button">

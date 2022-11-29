@@ -23,7 +23,7 @@ function SignUp (): JSX.Element {
                     <div className="text-space">
                         <p>Signing up will allow you to save your favorite stations.</p>
                     </div>
-                    <Form onClick={onSignUp} buttonText="Sign Up"></Form>
+                    <Form onClick={onSignUp} buttonText="Sign up"></Form>
                     <Link to="/login"> <p className="link"> Already have an account? </p> </Link>
                 </>
             </ProfileWrapper>
